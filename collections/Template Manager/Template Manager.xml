@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<Collection name="Template Manager" guid="{b2ddf3e9-7d44-4857-a9e1-c1bd6ad75467}" system="No" updatable="Yes" blockNavigatorNode="No" onInstallAddonGuid="">
+	<HelpLink></HelpLink>
+	<Help></Help>
+</Collection>
