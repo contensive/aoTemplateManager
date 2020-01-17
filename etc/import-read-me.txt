@@ -1,0 +1,88 @@
+
+
+(see google doc for latest version)
+
+https://docs.google.com/document/d/1ecKnm6YHlvwI8QOoKkvVlaG8UaF_ocyK7TJLaK9kpOU/edit?usp=sharing
+
+The html source has styles that are translated into mustache elements
+
+Content between the body tags is stored in a record designated by the layout or template meta tag
+
+meta tags are used to target the import
+
+	<meta name="layout" content="mylayout">
+	<meta name="template" content="home template">
+
+
+classes:
+
+	mustache-data-propertyName
+
+		<td scope="col" class="mustache-data-code">1234</td>
+
+		<td scope="col">{{code}}</td>
+
+
+	mustache-html-propertyName
+
+		<td scope="col" class="mustache-data-code">1234</td>
+
+		<td scope="col">{{{code}}}</td>
+
+
+	mustache-list-propertyName
+
+		<tr class="mustache-list-voucherList">
+			<td scope="col">1234</td>
+			<td scope="col">1023.45</td>
+		</tr>
+
+		{{#voucherList}}
+		<tr>
+			<td scope="col">1234</td>
+			<td scope="col">1023.45</td>
+		</tr>
+                {{/voucherList}}
+
+
+	mustache-ifempty-propertyName
+
+                <tr class="mustache-ifempty-voucherList">
+                    <td colspan="4" scope="col">the list is empty</td>
+                </tr>
+
+		{{^voucherList}}
+                <tr>
+                    <td colspan="4" scope="col">the list is empty</td>
+                </tr>
+		{{/voucherList}}
+
+
+	mustache-iffalse-propertyName
+
+                <tr class="mustache-iffalse-colorRed">
+                    <td colspan="4" scope="col">the color is not red</td>
+                </tr>
+
+		{{^colorRed}}
+                <tr>
+                    <td colspan="4" scope="col">the color is not red</td>
+                </tr>
+		{{/colorRed}}
+
+
+	mustache-iftrue-propertyName
+
+                <tr class="mustache-iftrue-colorRed">
+                    <td colspan="4" scope="col">the color is red</td>
+                </tr>
+
+		{{#colorRed}}
+                <tr>
+                    <td colspan="4" scope="col">the color is red</td>
+                </tr>
+		{{/colorRed}}
+
+
+
+

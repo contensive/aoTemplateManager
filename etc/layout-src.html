@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html>
+<!-- Bootstrap Stylesheet -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" >
+<body layout="">
+
+<ul class="abErrorList" style="display:none;">
+    <li id="errMsg" class="ccError"></li>
+</ul>
+<div class="abDiscountsList">
+    <input type="hidden" name="srcformid" value="{{srcFormId}}">
+    <div class="mustache-iffalse-discountNone abDiscountNone">
+        <h4>Promotional Discounts and Vouchers</h4>
+        <p>Your account has not used promotional discounts or vouchers.</p>
+    </div>
+    <div class="abDiscountPercent">
+        <h4>Promotional Discounts</h4>
+        <p>Promotional Discounts represent percentage-based discounts applied to purchases before payment. These results include all orders on your account associated with promotional discounts where a percentage discount was applied.</p>
+        <table class="table table-bordered">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Active Since</th>
+                    <th scope="col">Expiration</th>
+                    <th scope="col">Amount Saved</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="mustache-list-discountList">
+                    <td scope="col" class="cb-code" >abcd</td>
+                    <td scope="col" class="cb-dateCreated">2/3/2018</td>
+                    <td scope="col" class="cb-dateExpires">1/1/2023</td>
+                    <td scope="col" class="cb-amountSaved">100.00</td>
+                </tr>
+                <tr class="mustache-ifempty-discountList">
+                    <td colspan="4" scope="col">empty</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="abDiscountAmount">
+        <h4>Promotional Vouchers</h4>
+        <p>Promotional Vouchers represent price-based discounts applied to purchases before payment. These results include all orders on your account associated to promotional vouchers.</p>
+        <table class="table table-bordered">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Original Amount</th>
+                    <th scope="col">Balance</th>
+                    <th scope="col">Expiration</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="mustache-list-voucherList">
+                    <td scope="col" class="cb-code">1234</td>
+                    <td scope="col" class="cb-amountOriginal">1023.45</td>
+                    <td scope="col" class="cb-amountBalance">50.00</td>
+                    <td scope="col" class="cb-dateExpires">1/2/2021</td>
+                </tr>
+                <tr class="mustache-block">
+                    <td scope="col" class="cb-code">43563</td>
+                    <td scope="col" class="cb-amountOriginal">10523.45</td>
+                    <td scope="col" class="cb-amountBalance">505.00</td>
+                    <td scope="col" class="cb-dateExpires">1/3/2021</td>
+                <tr class="mustache-ifempty-voucherList">
+                    <td colspan="4" scope="col">empty</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

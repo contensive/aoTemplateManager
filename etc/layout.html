@@ -1,0 +1,70 @@
+<ul class="abErrorList" style="display:none;">
+    <li id="errMsg" class="ccError"></li>
+</ul>
+<div class="abDiscountsList">
+    <input type="hidden" name="srcformid" value="{{srcFormId}}">
+    {{#discountNone}}
+        <div class="abDiscountNone">
+            <h4>Promotional Discounts and Vouchers</h4>
+            <p>Your account has not used promotional discounts or vouchers.</p>
+        </div>
+    {{/discountNone}}
+    <div class="abDiscountPercent">
+        <h4>Promotional Discounts</h4>
+        <p>Promotional Discounts represent percentage-based discounts applied to purchases before payment. These results include all orders on your account associated with promotional discounts where a percentage discount was applied.</p>
+        <table class="table table-bordered">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Active Since</th>
+                    <th scope="col">Expiration</th>
+                    <th scope="col">Amount Saved</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#discountList}}
+                    <tr>
+                        <td scope="col">{{code}}</td>
+                        <td scope="col">{{dateCreated}}</td>
+                        <td scope="col">{{dateExpires}}</td>
+                        <td scope="col">{{amountSaved}}</td>
+                    </tr>
+                {{/discountList}}
+                {{^discountList}}
+                    <tr class="^discountList">
+                        <td colspan="4" scope="col">empty</td>
+                    </tr>
+                {{/discountList}}
+            </tbody>
+        </table>
+    </div>
+    <div class="abDiscountAmount">
+        <h4>Promotional Vouchers</h4>
+        <p>Promotional Vouchers represent price-based discounts applied to purchases before payment. These results include all orders on your account associated to promotional vouchers.</p>
+        <table class="table table-bordered">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Original Amount</th>
+                    <th scope="col">Balance</th>
+                    <th scope="col">Expiration</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#voucherList}}
+                    <tr>
+                        <td scope="col">{{code}}</td>
+                        <td scope="col">{{amountOriginal}}</td>
+                        <td scope="col">{{amountBalance}}</td>
+                        <td scope="col">{{dateExpires}}</td>
+                    </tr>
+                {{/voucherList}}
+                {{^voucherList}}
+                    <tr>
+                        <td colspan="4" scope="col">empty</td>
+                    </tr>
+                {{/voucherList}}
+            </tbody>
+        </table>
+    </div>
+</div>
